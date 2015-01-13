@@ -9,15 +9,10 @@ public class BasicAWSCredentialsProvider implements AWSCredentialsProvider {
 
 	public BasicAWSCredentialsProvider(BasicAWSCredentials bwC) {
 		gBAWSc = bwC;
-		// getCredentials(bwC);
 	}
 
 	public AWSCredentials getCredentials(BasicAWSCredentials bwC) {
-
 		return bwC;
-		// TODO Auto-generated method stub
-
-		// return BasicAWSCredentialsProvider;
 	}
 
 	@Override
