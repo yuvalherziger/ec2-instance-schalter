@@ -16,8 +16,9 @@ import com.amazonaws.services.ec2.model.StopInstancesRequest;
 import com.amazonaws.services.ec2.model.StopInstancesResult;
 
 public class Schalter {
+	// Instantiating the initial class logger:
 	private static Log log = LogFactory.getLog(Schalter.class);
-
+	
 	public static void main(String[] args) {
 		try {
 			String configFile = args[0];
@@ -59,24 +60,20 @@ public class Schalter {
 					+ SchalterConfiguration.instanceID.get(i));
 			log.info(SchalterConfiguration.action[0]);
 			try {
-				AmazonEC2Client amazonEC2Client = new AmazonEC2Client(
-						credentials);
-				amazonEC2Client
-						.setEndpoint(SchalterConfiguration.EC2Endpoint[i]);
+				AmazonEC2Client amazonEC2Client = new AmazonEC2Client(credentials);
+				amazonEC2Client.setEndpoint(SchalterConfiguration.EC2Endpoint[i]);
 				ArrayList<String> instanceIdContainer = new ArrayList<String>();
-				instanceIdContainer
-						.add(SchalterConfiguration.instanceID.get(i));
+				instanceIdContainer.add(SchalterConfiguration.instanceID.get(i));
 				if (SchalterConfiguration.action[i].equals("START")) {
-					log.info("Starting attempt to START the instance");
+					log.info("Beginning attempt to START the instance");
 					StartInstancesRequest startInstancesRequest = new StartInstancesRequest();
 					startInstancesRequest.setInstanceIds(instanceIdContainer);
 					StartInstancesResult startInstancesResult = amazonEC2Client
 							.startInstances(startInstancesRequest);
-					log.info("Request result: "
-							+ startInstancesResult.getStartingInstances());
+					log.info("Request result: " + startInstancesResult.getStartingInstances());
 				}
 				if (SchalterConfiguration.action[i].equals("STOP")) {
-					log.info("Starting attempt to STOP the instance");
+					log.info("Beginning attempt to STOP the instance");
 					StopInstancesRequest stopInstancesRequest = new StopInstancesRequest();
 					stopInstancesRequest.setInstanceIds(instanceIdContainer);
 					StopInstancesResult stopInstancesResult = amazonEC2Client
