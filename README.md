@@ -3,7 +3,7 @@ Mini-project for shutting down and booting existing instances on Amazon Web Serv
 
 <h3>What is EC2 Instance Schalter?</h3>
 EC2 Instance Schalter helps you save money on running EC2 instances on Amazon Web Service.
-This mini-project was written in order to schedule shut-downa and starts of EC2 instances during development and testing phases.
+This mini-project was written in order to schedule shut-downs and starts of EC2 instances during development and testing phases.
 
 <h3>Installation</h3>
 <ul>
