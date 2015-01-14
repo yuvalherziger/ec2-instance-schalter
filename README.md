@@ -24,7 +24,7 @@ aws.action			= START,STOP,START
 ```
 The above example would start the first instance, stop the second one and start the last one. 
 
-<b>Q:</b> What happens if my an instance is already in the state to which I'm trying to bring it?
+<b>Q:</b> What happens if an instance is already in the state to which I'm trying to bring it?
 
 <b>A:</b> Nothing :-)
 
