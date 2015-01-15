@@ -81,7 +81,10 @@ public class Schalter {
 					log.info("Request result: "
 							+ stopInstancesResult.getStoppingInstances());
 				}
-				Thread.sleep(3000);
+				// if not the last instance in the sequence,
+				// allowing ec2 client 1.5 sec to settle between requests
+				if (i < SchalterConfiguration.instanceID.size() - 1)
+					Thread.sleep(1500);
 			} catch (Exception ex) {
 				log.info("ERROR: " + ex.toString());
 				return false;
