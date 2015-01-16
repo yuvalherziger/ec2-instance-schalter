@@ -31,5 +31,5 @@ The above example would start the first instance, stop the second one and start 
 <h3>Running</h3>
 Simply run the following command:
 ```bash
-java -jar {name-of-jar-file}.jar my-config.properties 
+java -jar {path-and-name-of-jar-file}.jar {path-and-name-of-config-file}.properties 
 ```
