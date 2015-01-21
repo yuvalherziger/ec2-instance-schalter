@@ -11,10 +11,6 @@ public class BasicAWSCredentialsProvider implements AWSCredentialsProvider {
 		gBAWSc = bwC;
 	}
 
-	public AWSCredentials getCredentials(BasicAWSCredentials bwC) {
-		return bwC;
-	}
-
 	@Override
 	public void refresh() {
 	}
